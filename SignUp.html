@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Star Crossed</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Galada">
+  <link href="sign up page.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <h1> Star Crossed </h1>
+  <form action="" method="post">
+    {{form.hidden_tag()}}
+    <p>
+      {{form.email.label}} <br>
+      {{form.email(size=30)}} <br>
+    </p>
+    <p>
+      {{form.username.label}} <br>
+      {{form.username(size=20)}} <br>
+    </p>
+    <p>
+      {{form.password.label}} <br>
+      {{form.password(size=20)}} <br>
+    </p>
+    <p>
+      {{form.star_sign.label}} <br>
+      {{form.star_sign(size=11)}} <br>
+    </p>
+    <p>
+      {{form.date_of_birth.label}} <br>
+      {{form.date_of_birth(size=10)}} <br>
+    </p>
+    <p> {{form.submit()}} </p> <br>
+  </form>
+  <button><a href="index.html">Have An Account?</a></button>
+</body>
+</html>
