@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width">
   <title>Star Crossed</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Galada">
-  <link href="dashboard.css" rel="stylesheet" type="text/css" />
+  <link href="{{ url_for('static', filename='dashboard.css') }}" rel="stylesheet" type="text/css" />
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,9 +32,7 @@
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
           <li class="active"><a href="Dashboard.html">Dashboard</a></li>
-          <li><a href="profile.html">Profile</a></li>
           <li><a href="chat.html">Contacts</a></li>
-          <li><a href="chat.html">Posts</a></li>
         </ul>
       </div>
     </div>
@@ -48,8 +46,6 @@
           <li class="active"><a href="#section1">Dashboard</a></li>
           <li><a href="index.html">Logout</a></li>
           <li><a href="chat.html">Chat</a></li>
-          <li><a href="#section3">Profile</a></li>
-          <li><a href="#section3">Post</a></li>
         </ul><br>
       </div>
       <br>
@@ -64,91 +60,214 @@
           <p style="margin: 0; color: lightgreen; display: inline;">- Earth: Taurus, Virgo, Capricon</p>
         </div>
         <div class="row">
-          <div class="col-sm-4">
-            <div class="well" , style="background-color:transparent; color:white;">
-              <a href="aries.html">
-                <button>Aries</button>
-              </a>
-            </div>
-            <div class="col-sm-4">
-              <div class="well" , style="background-color:transparent; color:white;">
-                <a href="taurus.html">
-                  <button>Taurus</button>
-                </a>
+          <div class="col-sm-3">
+            
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+      body {
+          background-color: transparent;
+          color: white;
+      }
+      .well {
+          background-color: transparent;
+          color: white;
+      }
+
+      section {
+          max-width: 800px;
+          margin: 0 auto;
+          padding: 2rem;
+          background-color: rgba(255, 225, 255, 0.5);
+          border-radius: 10px;
+          margin-top: 2rem;
+      }
+      
+  </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+          <div class="col-sm-3">
+              <div class="well">
+                  <section>
+                  <h4><a href="aries.html" style="color:white;">Aries</a></h4>
+                  {%for compatible in compatibled%}
+                  {% for compatibles in compatible %}
+                    {% if "Aries" in compatibles %}
+                      <p style="color:lightgreen">Compatible</p>
+                    {% endif %}
+                  {% endfor %}
+                {% endfor %}
+                    </section>
               </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="well" , style="background-color:transparent; color:white;">
-                <h4>Sagittarius</h4>
-              </div>
-            </div>
           </div>
-
-
-          <div class="row">
-            <div class="col-sm-4">
-              <div class="well" , style="background-color:transparent; color:white;">
-                <h4>Gemini</h4>
+          <div class="col-sm-3">
+              <div class="well">
+                  <section>
+                  <h4><a href="taurus.html" style="color:white;">Taurus</a></h4>
+                  {%for compatible in compatibled%}
+                  {% for compatibles in compatible %}
+                    {% if "Taurus" in compatibles %}
+                      <p style="color:lightgreen">Compatible</p>
+                    {% endif %}
+                  {% endfor %}
+                {% endfor %}
+                </section>
               </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="well" , style="background-color:transparent; color:white;">
-                <h4>Virgo</h4>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="well" , style="background-color:transparent; color:white;">
-                <h4><a href="leo.html">Leo</a></h4>
-              </div>
-            </div>
           </div>
-
-
-          <div class="row">
-            <div class="col-sm-4">
-              <div class="well" , style="background-color:transparent; color:white;">
-                <h4>Cancer</h4>
+          <div class="col-sm-3">
+              <div class="well">
+                  <section>
+                  <h4><a href="sagittarius.html" style="color:white;">Sagittarius</a></h4>
+                  {%for compatible in compatibled%}
+                  {% for compatibles in compatible %}
+                    {% if "Sagittarius" in compatibles %}
+                      <p style="color:lightgreen">Compatible</p>
+                    {% endif %}
+                  {% endfor %}
+                {% endfor %}
+                  </section>
               </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="well" , style="background-color:transparent; color:white;">
-                <h4>Scorpio</h4>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="well" , style="background-color:transparent; color:white;">
-                <h4>Libra</h4>
-              </div>
-            </div>
           </div>
-
-
-
-          <div class="row">
-            <div class="col-sm-4">
-              <div class="well" , style="background-color:transparent; color:white;">
-                <h4>Pisces</h4>
-              </div>
-            </div>
-            <div class="col-sm-4" , style="background-color:transparent; color:white;">
-              <div class="well" , style="background-color:transparent; color:white;">
-                <h4>Capricorn</h4>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="well" , style="background-color:transparent; color:white;">
-                <h4>Aquarius</h4>
-              </div>
-            </div>
-          </div>
-          <p></p>
-        </div>
       </div>
-    </div>
-  </div>
-  </div>
-  </div>
-  <p style="color:white;">Click on the boxes to learn more about each zodiac!</p>
-</body>
 
+      <div class="row">
+          <div class="col-sm-3">
+              <div class="well">
+                  <section>
+                  <h4><a href="gemini.html" style="color:white;">Gemini</a></h4>
+                  {%for compatible in compatibled%}
+                  {% for compatibles in compatible %}
+                    {% if "Gemini" in compatibles %}
+                      <p style="color:lightgreen">Compatible</p>
+                    {% endif %}
+                  {% endfor %}
+                {% endfor %}
+                  </section>
+              </div>
+          </div>
+          <div class="col-sm-3">
+              <div class="well">
+                  <section>
+                  <h4><a href="virgo.html" style="color:white;">Virgo</a></h4>
+                  {%for compatible in compatibled%}
+                  {% for compatibles in compatible %}
+                    {% if "Virgo" in compatibles %}
+                      <p style="color:lightgreen">Compatible</p>
+                    {% endif %}
+                  {% endfor %}
+                {% endfor %}
+                  </section>
+              </div>
+          </div>
+          <div class="col-sm-3">
+              <div class="well">
+                  <section>
+                  <h4><a href="leo.html" style="color:white;">Leo</a></h4>
+                  {%for compatible in compatibled%}
+                  {% for compatibles in compatible %}
+                    {% if "Leo" in compatibles %}
+                      <p style="color:lightgreen">Compatible</p>
+                    {% endif %}
+                  {% endfor %}
+                {% endfor %}
+                  </section>
+              </div>
+          </div>
+      </div>
+
+      <div class="row">
+          <div class="col-sm-3">
+              <div class="well">
+                  <section>
+                  <h4><a href="cancer.html" style="color:white;">Cancer</a>
+                  </h4>
+                  {%for compatible in compatibled%}
+                  {% for compatibles in compatible %}
+                    {% if "Cancer" in compatibles %}
+                      <p style="color:lightgreen">Compatible</p>
+                    {% endif %}
+                  {% endfor %}
+                {% endfor %}
+                  </section>
+              </div>
+          </div>
+          <div class="col-sm-3">
+              <div class="well">
+                  <section>
+                  <h4><a href="scorpio.html" style="color:white;">Scorpio</a></h4>
+                  {%for compatible in compatibled%}
+                  {% for compatibles in compatible %}
+                    {% if "Scorpio" in compatibles %}
+                      <p style="color:lightgreen">Compatible</p>
+                    {% endif %}
+                  {% endfor %}
+                {% endfor %}
+                  </section>
+              </div>
+          </div>
+          <div class="col-sm-3">
+              <div class="well">
+                  <section>
+                  <h4><a href="libra.html" style="color:white;">Libra</a></h4>
+                  {%for compatible in compatibled%}
+                  {% for compatibles in compatible %}
+                    {% if "Libra" in compatibles %}
+                      <p style="color:lightgreen">Compatible</p>
+                    {% endif %}
+                  {% endfor %}
+                {% endfor %}
+                  </section>
+              </div>
+          </div>
+      </div>
+
+      <div class="row">
+          <div class="col-sm-3">
+              <div class="well">
+                  <section>
+                  <h4><a href="pisces.html" style="color:white;">Pisces</a></h4>
+                  {%for compatible in compatibled%}
+                  {% for compatibles in compatible %}
+                    {% if "Pisces" in compatibles %}
+                      <p style="color:lightgreen">Compatible</p>
+                    {% endif %}
+                  {% endfor %}
+                {% endfor %}
+                  </section>
+              </div>
+          </div>
+          <div class="col-sm-3">
+              <div class="well">
+                  <section>
+                  <h4><a href="capricorn.html" style="color:white;">Capricorn</a></h4>
+                  {%for compatible in compatibled%}
+                  {% for compatibles in compatible %}
+                    {% if "Capricorn" in compatibles %}
+                      <p style="color:lightgreen">Compatible</p>
+                    {% endif %}
+                  {% endfor %}
+                {% endfor %}
+                  </section>
+              </div>
+          </div>
+          <div class="col-sm-3">
+              <div class="well">
+                  <section>
+                  <h4><a href="aquarius.html" style="color:white;">Aquarius</a></h4>
+                  {%for compatible in compatibled%}
+                  {% for compatibles in compatible %}
+                    {% if "Aquarius" in compatibles %}
+                      <p style="color:lightgreen">Compatible</p>
+                    {% endif %}
+                  {% endfor %}
+                {% endfor %}
+                  </section>
+              </div>
+          </div>
+      </div>
+      <p>Click on the boxes to learn more about each zodiac!</p>
+</body>
 </html>
