@@ -8,7 +8,8 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import create_engine, exc, text
 from flask_login import UserMixin, LoginManager, login_user, current_user, login_required, logout_user
 from werkzeug.security import generate_password_hash, check_password_hash
-app = Flask(__name__, template_folder='templates')
+app = Flask(__name__, template_folder='templates', static_folder="static")
+print(app.static_folder)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///StarCrossed.db'
 app.config['SQLAlchemy_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = "TisASecret"
@@ -64,6 +65,7 @@ def register():
     return redirect("/")
   return render_template("SignUp.html", form=form)
 @app.route("/", methods=['GET', 'POST'])
+@app.route("/index.html", methods=['GET', 'POST'])
 def login():
   form = LoginForm(csrf_enabled = False)
   if form.validate_on_submit():
@@ -105,7 +107,7 @@ def dashboard():
   for sign, compatibles in star_sign_key.items():
     if current_user.star_sign == sign:
       compatible_with.append(compatibles)
-  return render_template("Dashboard.html", compatibled=compatible_with)
+  return render_template("Dashboard.html", user=current_user)
 @app.route("/aries.html")
 def aries():
   list_of_aries = User.query.filter(User.star_sign == "Aries").all() 
@@ -114,10 +116,46 @@ def aries():
 def taurus():
   list_of_taurus = User.query.filter(User.star_sign == "Taurus").all() 
   return render_template("taurus.html", taurus_users = list_of_taurus)
+@app.route("/aquarius.html")
+def aquarius():
+  list_of_aquariuses = User.query.filter(User.star_sign == "Aquarius").all() 
+  return render_template("aquarius.html", aquarius_users = list_of_aquariuses)
+@app.route("/cancer.html")
+def cancer():
+  cancers = User.query.filter(User.star_sign == "Cancer").all() 
+  return render_template("cancer.html", cancer_users = cancers)
+@app.route("/capricorn.html")
+def capricorn():
+  capricorns = User.query.filter(User.star_sign == "Capricorn").all() 
+  return render_template("capricorn.html", capricorn_users = capricorns)
+@app.route("/gemini.html")
+def gemini():
+  geminis = User.query.filter(User.star_sign == "Gemini").all() 
+  return render_template("gemini.html", gemini_users = geminis)
+@app.route("/leo.html")
+def leo():
+  leos = User.query.filter(User.star_sign == "Leo").all() 
+  return render_template("leo.html", leo_users = leos)
+@app.route("/libra.html")
+def libra():
+  libras = User.query.filter(User.star_sign == "Libra").all() 
+  return render_template("libra.html", libra_users = libras)
+@app.route("/pisces.html")
+def pisces():
+  pisceses = User.query.filter(User.star_sign == "Pisces").all() 
+  return render_template("pisces.html", pisces_users = pisceses)
+@app.route("/sagittarius.html")
+def sagittarius():
+  sagittariuses = User.query.filter(User.star_sign == "Sagittarius").all() 
+  return render_template("sagittarius.html", sagittarius_users = sagittariuses)
+@app.route("/scorpio.html")
+def scorpio():
+  scorpios = User.query.filter(User.star_sign == "Scorpio").all() 
+  return render_template("scorpio.html", scorpio_users = scorpios)
+@app.route("/virgo.html")
+def virgo():
+  virgos = User.query.filter(User.star_sign == "Virgo").all() 
+  return render_template("virgo.html", virgo_users = virgos)
 @app.route("/chat.html")
 def chat():
   return render_template("chat.html")
-@app.route("/")
-@login_required
-def logout():
-  return render_template("userPage.html", user=user)
