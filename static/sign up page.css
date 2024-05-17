@@ -1,0 +1,53 @@
+body{
+    text-align: justify;
+    font-size: 15px;
+    cursor: url(""), auto;
+    font-family: Galada;
+    color: white;
+    background-image: url(background.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  button {
+    color: white;
+    font-family: Galada;
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid white;
+    font-size: 20px;
+    transition: 0.4s;
+  }
+  button:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  h1 {
+    color: white; 
+    text-align: center;
+    font-family: Galada;
+    font-size: 75px;
+  }
+  input {
+    background-color: transparent;
+    font-family: Galada;
+    color: white;
+    border: none;
+    border-bottom: 2px solid white;
+    border-radius: 2px;
+    transition: 0.4s;
+    font-size: 20px;
+    text-decoration: none;
+  }
+  input:hover {
+    opacity: 1;
+  }
+  
+  label{
+    font-family: Galada;
+    color: white;
+  }
