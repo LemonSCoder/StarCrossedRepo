@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Star Crossed</title>
+  <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Galada">
-  <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
-
 <body>
+  <h1> Star Crossed </h1>
   <form action="" method="post">
     {{form.hidden_tag()}}
     <p>
@@ -27,5 +26,4 @@
   </form>
   <button><a href="SignUp.html">Need An Account?</a></button>
 </body>
-
 </html>
