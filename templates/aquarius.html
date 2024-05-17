@@ -11,7 +11,7 @@
               font-family: Arial, sans-serif;
               margin: 0;
               padding: 0;
-              background-image: url(geminiimage.jpg);
+              background-image: url(aquarius.jpg);
               background-size: cover;
               background-repeat: no-repeat;
               background-position: center;
@@ -57,7 +57,7 @@
               margin-bottom: 0;
           }
       </style>
-  </head>
+    </head>
 <header>
   <h1>Aquarius ♒️: January 20 - February 18</h1>
   <h2>Top 5 Compatible Signs</h2>
@@ -97,6 +97,12 @@
   <b>Weaknesses</b>: Power struggles may occur due to both signs' strong personalities and desire for attention.<br><br>
    <b>Compatibility with Aquarius</b>: Their shared zest for life and creativity fuels a relationship filled with passion and excitement, where both partners inspire each other to shine brightly and pursue their dreams unabashedly.
       </section>
+    <section>
+        <h3>Users Who Are Aquariuses</h3>
+        {%for user in aquarius_users%}
+        <b>{{user}}</b> <br> <br>
+        {%endfor%}
+    </section>
     <a href="Dashboard.html">
     <button>Back to Dashboard</button>
     </a>
